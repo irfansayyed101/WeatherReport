@@ -6,7 +6,7 @@ import {createStore} from 'redux';
 import rootReducer from '../reducers';
 
 describe('<WeatherContainer/> ', () => {
-    it('renders 1 WeatherContainer component', () => {
+    it('renders 1 WeatherContainer components', () => {
         const store = createStore(
             rootReducer,
             window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() 
