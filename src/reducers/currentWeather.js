@@ -1,3 +1,4 @@
+import * as weatherAction from '../actions/weatherAction';
 const initialState = {
     weatherdata: [],
     weatherchartdata:[],
@@ -9,34 +10,34 @@ const initialState = {
 
 const currentWeather = (state = initialState, action ) => {
     switch(action.type){
-        case 'WEATHER_LIST':
+        case weatherAction.WEATHER_LIST:
             return {
                 ...state,
                 weatherdata : action.payload
             };
-        case 'WEATHER_CHART_LIST':
+        case weatherAction.WEATHER_CHART_LIST:
             return {
                 ...state,
                 weatherchartdata : action.payload
             };
-        case 'WEATHER_CARD_ID':
+        case weatherAction.WEATHER_CARD_ID:
             return {
                 ...state,
                 selectedweathercard : action.payload
             };
-        case 'WEATHER_TEMPERATURE_TYPE':
+        case weatherAction.WEATHER_TEMPERATURE_TYPE:
             return {
                 ...state,
                 tempraturetype : action.payload
             };
             
-        case 'NEXT_CARD':
+        case weatherAction.NEXT_CARD:
             return {
                 ...state,
                 startIndex : state.startIndex + 1,
                 endIndex : state.endIndex + 1
             };
-        case 'PREVIOUS_CARD':
+        case weatherAction.PREVIOUS_CARD:
             return {
                 ...state,
                 startIndex : state.startIndex - 1,
