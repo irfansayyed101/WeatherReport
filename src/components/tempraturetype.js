@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux';
 import allActions from '../actions';
 
 const TemperatureTypeRadioButtonsGroup = ()=> {
-  const [value, setValue] = React.useState('C');
+  const [value, setValue] = React.useState('F');
   const dispatch = useDispatch();
   const handleChange = event => {
     dispatch(allActions.weatherAction.currentTempratureType(event.target.value));

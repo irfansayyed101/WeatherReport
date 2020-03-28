@@ -2,7 +2,7 @@ const initialState = {
     weatherdata: [],
     weatherchartdata:[],
     selectedweathercard:0,
-    tempraturetype:'C',
+    tempraturetype:'F',
     startIndex:0,
     endIndex:2
 };
