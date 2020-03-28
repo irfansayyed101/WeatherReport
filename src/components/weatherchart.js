@@ -27,7 +27,7 @@ const convertTemperature = (value,tempType)=> {
 }
 
 const constructBarchratdata = (arr,current,type) => {
-  debugger;
+  
     blueData = [];
     arr[current] && arr[current].map((item,index) => {
         let obj = {};
