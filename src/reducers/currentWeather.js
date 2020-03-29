@@ -8,7 +8,7 @@ const initialState = {
     endIndex:2
 };
 
-const currentWeather = (state = initialState, action ) => {
+export const currentWeather = (state = initialState, action ) => {
     switch(action.type){
         case weatherAction.WEATHER_LIST:
             return {
