@@ -6,7 +6,7 @@ import history from '../common/history';
 
 const Loading = () => {
     const [loading, setLoading] = useState(true);
-    const [weather, setWeather] = useState([]);
+    // const [weather, setWeather] = useState([]);
     const APPID = '75f972b80e26f14fe6c920aa6a85ad57';
     const url = `http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&APPID=${APPID}&cnt=40&units=metric`;
 
@@ -44,7 +44,7 @@ const Loading = () => {
             let dtArr = obj.dt_txt.split(' ');
             let accArr = accumulator.split(' ');
             if(dtArr[0] === accArr[0] || dtArr[1] === '00:00:00'){
-                let arrNew = weatherListArr.length == 0 ? weatherListArr.push([]) : weatherListArr[weatherListArr.length-1];
+                let arrNew = weatherListArr.length === 0 ? weatherListArr.push([]) : weatherListArr[weatherListArr.length-1];
                 weatherListArr[weatherListArr.length-1].push(obj);
             } else{
                 weatherListArr.push([]);
@@ -61,7 +61,7 @@ const Loading = () => {
     try {
       const response = await fetch(url);
       const json = await response.json();
-      setWeather(json.list);
+      // setWeather(json.list);
       let finalArr = constructArr(json.list);
       dispatch(allActions.weatherAction.saveData(finalArr));
       let weatherchartArr = constructWeatherchart(json.list);

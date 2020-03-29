@@ -11,7 +11,7 @@ import {
 } from 'react-vis';
 
 const greenData = [{x: '', y: 10}, {x: '', y: 5}, {x: '', y: 15}];
-const blueData = [];
+let blueData = [];
 const labelData = greenData.map((d, idx) => ({
   x: d.x,
   y: 0
