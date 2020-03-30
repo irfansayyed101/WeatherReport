@@ -18,15 +18,28 @@ const ContainedButtons = () => {
   const dispatch = useDispatch();
   const startIndex = useSelector(state => state.currentWeather.startIndex);
   const endIndex = useSelector(state => state.currentWeather.endIndex);
+  const currentWeather = useSelector(state => state.currentWeather);
+  const setSelectedWeathercard = (key) =>{
+    currentWeather.weatherdata.map((obj,index) => {
+      if(index === key){
+        obj.isSelected = 1;
+      }else{
+        obj.isSelected = -1;
+      }
+    });
+  }
 
   const previous = () => {
     dispatch(allActions.weatherAction.previousCard(startIndex - 1));
     dispatch(allActions.weatherAction.selectedWeathercard(startIndex -1 ));
+    setSelectedWeathercard(startIndex -1);
   }
   const next = () => {
     dispatch(allActions.weatherAction.nextCard(endIndex + 1));
     dispatch(allActions.weatherAction.selectedWeathercard(startIndex + 1));
+    setSelectedWeathercard(startIndex + 1);
   }
+  
   return (
     <div className={classes.root}>
       <Button variant="contained" color="primary" onClick={previous} disabled={startIndex === 0}>

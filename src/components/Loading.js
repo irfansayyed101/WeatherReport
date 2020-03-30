@@ -22,6 +22,7 @@ const Loading = () => {
                 let arrLength = weatherListArr.length === 0 ? 0 : 1;
                 if(arrLength === 0){
                     obj.Average = obj.main.temp;
+                    obj.isSelected = 1;
                     weatherListArr.push(obj);
                 } else {
                     let obj1 = weatherListArr[weatherListArr.length-1];
@@ -29,6 +30,7 @@ const Loading = () => {
                 }
             } else{
                 obj.Average = obj.main.temp;
+                obj.isSelected = -1;
                 weatherListArr.push(obj);
                 return accumulator = obj.dt_txt;
             }
